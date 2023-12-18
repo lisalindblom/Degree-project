@@ -1,7 +1,9 @@
+import { ShowAllContent } from "../components/guides/ShowAllContent";
+
 export const Guides = () => {
   return (
     <>
-      <div className="container-col outline maincontent">Guides</div>
+      <ShowAllContent></ShowAllContent>
     </>
   );
 };
