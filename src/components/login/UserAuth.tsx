@@ -37,15 +37,16 @@ export const UserAuth: React.FC<SignedInProps> = (props) => {
   if (!session) {
     return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />;
   } else {
-    // return <LogOut></LogOut>;export const LogOut = () => {
     const handleLogOut = () => {
       signOut();
     };
     return (
       <>
-        <button type="button" onClick={handleLogOut}>
-          Log out
-        </button>
+        <div className="container-col maincontent outline">
+          <button type="button" onClick={handleLogOut}>
+            Log out
+          </button>
+        </div>
       </>
     );
   }
