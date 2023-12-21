@@ -1,12 +1,41 @@
-// Initialize the JS client
-import { createClient } from "@supabase/supabase-js";
+import { IPost } from "../models/IPost";
+import supabase from "./SupabaseServices";
 
-const supabaseUrl = "https://lwfjbntqvslcwutotlde.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY || "";
-const supabase = createClient(supabaseUrl, supabaseKey);
+export const getPosts = async () => {
+  const { data, error } = await supabase.from("posts").select("*");
+  if (error) {
+    console.log("error fetching all posts", error);
+    return [];
+  }
+  console.log("getPosts", data);
 
-// Make a request
-export const getAllPosts = async () => {
-  const { data: test } = await supabase.from("testTables").select("*");
-  return test;
+  return data;
+};
+
+export const getPostById = async (id: string) => {
+  const { data } = await supabase.from("posts").select("*").eq("id", id);
+  return data;
+};
+
+export const createPost = async (post: IPost) => {
+  const { data: createdPost, error } = await supabase
+    .from("posts")
+    .insert(post);
+  if (error) {
+    throw new Error(error.message);
+  }
+  return createdPost;
+};
+
+export const updatePost = async (post: IPost) => {
+  const { data } = await supabase
+    .from("posts")
+    .update(post)
+    .match({ id: post.id });
+  return data;
+};
+
+export const deletePost = async (id: string) => {
+  const { data } = await supabase.from("posts").delete().match({ id: id });
+  return data;
 };
