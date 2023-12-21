@@ -1,11 +1,13 @@
 @use "boilerplate";
+@use "header";
+@use "variables" as var;
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var.$fontColorDark;
   background-color: #242424;
 
   font-synthesis: none;
@@ -19,7 +21,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #213547;
+  background-color: var.$fontColorLight;
+}
+
+button {
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: light) {
