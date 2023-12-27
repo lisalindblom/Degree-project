@@ -2,7 +2,7 @@ import { IPost } from "../models/IPost";
 import supabase from "./SupabaseServices";
 
 export const getPosts = async () => {
-  const { data, error } = await supabase.from("posts").select("*");
+  const { data, error } = await supabase.from("content").select("*");
   if (error) {
     console.log("error fetching all posts", error);
     return [];
