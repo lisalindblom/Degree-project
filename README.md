@@ -1,4 +1,35 @@
-# React + TypeScript + Vite
+# My degree project
+
+## Project setup
+
+```js
+npm install
+```
+
+```js
+npm build
+```
+
+## Commit message
+
+- `feat` Commits, that adds or remove a new feature
+- `fix` Commits, that fixes a bug
+- `refactor` Commits, that rewrite/restructure your code, however does not change any API behaviour
+- `style` Commits, that do not affect the meaning (white-space, formatting, missing semi-colons, etc)
+- `docs` Commits, that affect documentation only
+- `build` Commits, that affect build components like build tool, ci pipeline, dependencies, project version
+- `ops` Commits, that affect operational components like infrastructure, deployment, backup, recovery
+- `chore` Miscellaneous commits e.g. modifying `.gitignore`
+
+## Branch naming
+
+feat/desktop-header
+
+`feat` - implement new component
+`fix` - bugfixes
+`chore` - docs
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
