@@ -6,13 +6,19 @@ export const Nav = () => {
         <nav>
           <ul className="container-row">
             <li>
-              <Link to={"/guides"}> Guides</Link>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"/guides"}> Guides and inspiration</Link>
+            </li>
+            <li>
+              <Link to={"/material-guide"}> Fabric guide</Link>
             </li>
             <li>
               <Link to={"/climate-impact"}> Climate Impact</Link>
             </li>
             <li>
-              <Link to={"/material-guide"}> Material guide</Link>
+              <Link to={"/about-us"}> About us</Link>
             </li>
             <li>
               <Link to={"/login"}> Login</Link>
