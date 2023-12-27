@@ -17437,7 +17437,7 @@ const X0 = "https://lwfjbntqvslcwutotlde.supabase.co",
   Z0 = Y0.SUPABASE_KEY || "",
   ew = q0(X0, Z0),
   tw = async () => {
-    const { data: e } = await ew.from("testss").select("*");
+    const { data: e } = await ew.from("postss").select("*");
     return e;
   },
   ad = tw(),
