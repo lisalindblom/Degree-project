@@ -10,3 +10,18 @@
     @content;
   }
 }
+
+$headingMobile: "";
+$headinDesktop: "";
+$bodytext: "";
+$navFont: "";
+
+@mixin headingMobile {
+  font-family: $headingMobile;
+  font-size: 15rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+
+  color: #ffffff;
+}
