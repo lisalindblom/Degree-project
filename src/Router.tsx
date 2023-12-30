@@ -1,7 +1,8 @@
 import { Layout } from "./components/layout/Layout";
 import { Error } from "./components/misc/Error";
 import { LandingPage } from "./views/LandingPage";
-import { Guides } from "./views/Guides";
+import { Posts } from "./views/Posts";
+import { Post } from "./views/Post";
 import { MaterialGuide } from "./views/MaterialGuide";
 import { ClimateImpact } from "./views/ClimateImpact";
 import { Login } from "./views/Login";
@@ -23,8 +24,13 @@ export const router = createBrowserRouter([
         index: true,
       },
       {
-        path: "/guides",
-        element: <Guides></Guides>,
+        path: "/posts",
+        element: <Posts></Posts>,
+        index: true,
+      },
+      {
+        path: "/posts/:id",
+        element: <Post></Post>,
         index: true,
       },
       {
