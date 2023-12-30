@@ -16,12 +16,26 @@ $headinDesktop: "";
 $bodytext: "";
 $navFont: "";
 
-@mixin headingMobile {
-  font-family: $headingMobile;
-  font-size: 15rem;
+@mixin headingLMobile {
+  @content;
+  color: var(--Secondary-font-color, #000);
+  font-family: var.$primaryfontFamliy;
+  font-size: 1.5rem;
+  font-style: normal;
   font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.00938em;
+}
 
-  color: #ffffff;
+@mixin headingSMobile {
+  @content;
+  font-family: var.$primaryfontFamliy;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin paragraphMobile {
+  font-family: var.$primaryfontFamliy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
 }
