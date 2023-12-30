@@ -11,7 +11,7 @@ export const Login = () => {
 
   return (
     <>
-      <div className="container-col maincontent outline">
+      <div className="flex-col main-content outline">
         <UserAuth onSignedIn={handleSignIn}></UserAuth>
       </div>
     </>

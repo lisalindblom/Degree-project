@@ -4,12 +4,12 @@ export const Nav = () => {
     <>
       <div className="nav-container">
         <nav>
-          <ul className="container-row">
+          <ul className="flex-row">
             <li>
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <Link to={"/guides"}> Guides and inspiration</Link>
+              <Link to={"/posts"}> Guides and inspiration</Link>
             </li>
             <li>
               <Link to={"/material-guide"}> Fabric guide</Link>
