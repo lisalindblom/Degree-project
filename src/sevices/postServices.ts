@@ -1,21 +1,36 @@
 import { IPost } from "../models/IPost";
 import supabase from "./SupabaseServices";
 
-export const getPosts = async () => {
-  const { data, error } = await supabase.from("content").select("*");
+export const getPosts = async (page: number) => {
+  const limit = 10;
+  const { data, error } = await supabase
+    .from("content")
+    .select("*")
+    .range((page - 1) * limit, page * limit - 1);
+
   if (error) {
     console.log("error fetching all posts", error);
-    return [];
+    throw new Error(error.message);
   }
+  //remove
   console.log("getPosts", data);
 
   return data;
 };
 
 export const getPostById = async (id: string) => {
-  const { data } = await supabase.from("posts").select("*").eq("id", id);
+  const { data, error } = await supabase
+    .from("content")
+    .select("*")
+    .eq("id", id);
+  if (error) {
+    console.log("error fetching post by id", error);
+
+    throw new Error(error.message);
+  }
   return data;
 };
+// Admin
 
 export const createPost = async (post: IPost) => {
   const { data: createdPost, error } = await supabase

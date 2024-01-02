@@ -39,7 +39,7 @@ export const UserAuth: React.FC<SignedInProps> = (props) => {
     };
     return (
       <>
-        <div className="container-col main-content outline">
+        <div className="flex-col main-content outline">
           <button type="button" onClick={handleLogOut}>
             Log out
           </button>

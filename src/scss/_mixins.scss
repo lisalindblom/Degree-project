@@ -11,10 +11,7 @@
   }
 }
 
-$headingMobile: "";
-$headinDesktop: "";
-$bodytext: "";
-$navFont: "";
+// FONTSTYLES
 
 @mixin headingLMobile {
   @content;
