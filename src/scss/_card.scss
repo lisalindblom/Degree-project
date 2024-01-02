@@ -1,0 +1,80 @@
+@use "mixins";
+@use "variables" as var;
+
+.steps-card {
+  width: 90%;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  text-align: left;
+  background-color: var.$contentCard;
+  border-radius: 5px;
+
+  button {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var.$contentCard;
+    border: none;
+    width: 100%;
+    color: var.$fontColorLight;
+    @include mixins.headingSMobile;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2;
+  }
+}
+
+.step {
+  border-top: 1px solid #2d484680;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-direction: column;
+  p {
+    padding: 0.5rem;
+    @include mixins.paragraphMobile;
+    color: var.$fontColorLight;
+  }
+}
+
+.step-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+@include mixins.tablet {
+  .steps-card {
+    width: 100%;
+    margin: 0.5rem;
+    text-align: left;
+    background-color: var.$contentCard;
+    border-radius: 5px;
+    button {
+      justify-content: space-between;
+      align-items: center;
+      background-color: var.$contentCard;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      color: var.$fontColorLight;
+      @include mixins.headingSMobile;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 2;
+    }
+  }
+
+  .step {
+    border-radius: 0 0 5px 5px;
+    @include mixins.paragraphMobile;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+  }
+
+  .step-image {
+    border-radius: 5px;
+    width: 40%;
+  }
+}
