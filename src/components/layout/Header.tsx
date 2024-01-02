@@ -19,7 +19,7 @@ export const Header = () => {
   };
   return (
     <>
-      <div className="container-column header">
+      <div className="flex-col header">
         <div className="top">
           <div className="logo">
             <Link to={"/"}>RE:LIFE</Link>

@@ -1,14 +1,17 @@
+@use "variables" as var;
+@use "mixins";
+
 .outline {
   border: 1px solid greenyellow;
 }
 
-.container-column {
+.flex-col {
   display: flex;
   flex-direction: column;
   width: inherit;
 }
 
-.container-row {
+.flex-row {
   display: flex;
   flex-direction: row;
   width: inherit;
@@ -18,13 +21,19 @@
   padding: 10px;
   div {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  @include mixins.desktop {
+    display: flex;
+
+    align-items: center;
+    * {
+      flex-direction: row;
+    }
   }
 }
 
 .landing {
-  height: 90vh;
-}
-
-.maincontent {
   height: 90vh;
 }
