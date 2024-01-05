@@ -90,7 +90,7 @@ export const Filter = ({ setPosts }: FilterProps) => {
                   <option value="" defaultValue={""}>
                     Category
                   </option>
-                  <option value="REPAIR">Repair</option>
+                  <option value="MENDING">Mend</option>
                   <option value="UPCYCLE">Upcycle</option>
                   <option value="REUSE">Reuse</option>
                 </select>
