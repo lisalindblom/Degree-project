@@ -31,9 +31,9 @@ export const Post = () => {
     </>
   );
 
-  const showMaterial = post?.materials.map((material, index) => (
+  const showMaterial = post?.recommended_tools.map((r_tool, index) => (
     <>
-      <li key={index}>{material}</li>
+      <li key={index}>{r_tool}</li>
     </>
   ));
 

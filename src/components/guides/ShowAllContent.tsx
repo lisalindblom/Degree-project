@@ -1,22 +1,13 @@
 import { IPost } from "../../models/IPost";
-import { getPosts } from "../../sevices/PostServices";
-import { useEffect, useState } from "react";
 import noImage from "../../assets/knit.jpg";
 import { Link } from "react-router-dom";
 
-export const ShowAllContent = () => {
-  const [posts, setPosts] = useState<IPost[]>([]);
+interface ShowAllContentProps {
+  posts: IPost[];
+}
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const posts = await getPosts(1);
-      setPosts(posts);
-    };
-
-    fetchPosts();
-  }, []);
-
-  const showPosts = posts.map((post) => (
+export const ShowAllContent = ({ posts }: ShowAllContentProps) => {
+  const showPosts = posts.map((post: IPost) => (
     <>
       <div className="post-container">
         <Link className="post-content" to={`/posts/${post.id}`} key={post.id}>

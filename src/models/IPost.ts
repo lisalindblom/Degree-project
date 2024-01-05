@@ -1,12 +1,14 @@
 export interface IPost {
   id: string;
+  thumbnail: string;
+  recommended_tools: string[];
   presentation_heading: string;
   presentation_text: string;
-  thumbnail: string;
   steps: ISteps[];
-  materials: string[];
-  tags: string;
+  category: string;
   level: string;
+  material: string;
+  tools: string;
 }
 
 export interface ISteps {
