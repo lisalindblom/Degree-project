@@ -4,7 +4,7 @@ import {
   IFilter,
   filterPosts,
   findPostBySearchWord,
-} from "../../sevices/FilterServices";
+} from "../../services/FilterServices";
 import { IPost } from "../../models/IPost";
 
 interface FilterProps {

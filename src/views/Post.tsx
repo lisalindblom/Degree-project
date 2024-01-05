@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IPost } from "../models/IPost";
-import { getPostById } from "../sevices/PostServices";
+import { getPostById } from "../services/PostServices";
 import { useParams } from "react-router";
 import noImage from "../assets/knit.jpg";
 import { Card } from "../components/guides/Card";

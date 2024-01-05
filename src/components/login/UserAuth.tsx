@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Session } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { signOut } from "../../sevices/LoginServices";
-import supabase from "../../sevices/SupabaseServices";
+import { signOut } from "../../services/LoginServices";
+import supabase from "../../services/SupabaseServices";
 
 interface SignedInProps {
   onSignedIn: (signedIn: boolean) => void;
