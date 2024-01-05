@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Filter } from "../components/filter/Filter";
 import { ShowAllContent } from "../components/guides/ShowAllContent";
 import { IPost } from "../models/IPost";
-import { getPosts } from "../services/PostServices";
+import { getPosts } from "../services/postServices";
 
 export const Posts = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
