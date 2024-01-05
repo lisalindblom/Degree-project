@@ -1,9 +1,23 @@
-$primaryColor: black;
-$secondaryColor: rgb(42, 109, 42);
+// Colors
+$primaryColor: #195e5a;
+$secondaryColor: #6ba09d;
 
-// Textsstyles
-$fontFamliy: "DM Sans", sans-serif;
+$fontColorLight: #fffffc;
+$fontColorDark: #1d1d1d;
 
-$headingMobile: "";
-$headinDesktop: "";
-$bodytext: "";
+$hoverlight: #95ccc9;
+// $hoverdark:;
+
+$darkGreen: #43644b;
+$lightGreen: #7b9281;
+
+$contentCard: #3f6462;
+$filter: #98bda1;
+
+// Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Roboto:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,600;0,700;0,800;1,800;1,900&display=swap");
+
+$primaryfontFamliy: "Jost", sans-serif;
+$secondaryfontFamliy: "Asap", sans-serif;

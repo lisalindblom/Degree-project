@@ -1,7 +1,7 @@
 export const MaterialGuide = () => {
   return (
     <>
-      <div className="container-col outline maincontent">Material guide</div>
+      <div className="flex-col outline main-content">Material guide</div>
     </>
   );
 };

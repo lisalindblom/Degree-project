@@ -1,11 +1,11 @@
 export const Footer = () => {
   return (
     <>
-      <footer className="outline container-col footer">
+      <footer className="outline flex-col footer">
         <div id="contact">
           Vill du se fler av mina projekt eller komma i kontakt med mig?
         </div>
-        <div className="container-row " id="contact__links">
+        <div id="contact__links">
           <div className="mail">
             <a href="mailto: lisa.manssonlindblom@medieinstitutet.se">
               <i className="bi bi-envelope"></i>

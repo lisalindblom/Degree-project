@@ -1,0 +1,165 @@
+@use "variables" as var;
+@use "mixins";
+* {
+  @include mixins.paragraphSMobile;
+}
+.filter-layout-container {
+  display: flex;
+  flex-direction: column;
+}
+.graphics-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 90%;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  z-index: 1;
+  img {
+    height: 100px;
+  }
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  background-color: var.$filter;
+  padding-top: 1rem;
+}
+.search-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 1rem;
+}
+.search-button-container {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  width: 90%;
+}
+#search {
+  background-color: var.$fontColorLight;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  color: var.$fontColorDark;
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+}
+.search-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  @include mixins.buttonSmall;
+  background-color: #73957c2e;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+}
+.toggle-filter {
+  @include mixins.buttonSmall;
+  text-align: left;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+.filter-open {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+.filter-closed {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem 1rem;
+}
+.select-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 1rem 0;
+  select {
+    padding: 0.9rem;
+    background-color: var.$filter;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #5c9d6c;
+    color: var.$fontColorDark;
+  }
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.reset {
+  width: fit-content;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var.$fontColorDark;
+  margin-bottom: 1rem;
+}
+.submit {
+  color: #23452c;
+  @include mixins.buttonSmall;
+  height: fit-content;
+}
+
+// DESKTOP
+@include mixins.tablet {
+  .search-button-container {
+    width: 80%;
+  }
+  .filter {
+    flex-direction: column;
+  }
+  .toggle-filter {
+    align-self: flex-start;
+  }
+  .select-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0;
+    select {
+      flex: 1;
+      padding: 0.9rem;
+      background-color: var.$filter;
+      border-top: 1px solid #5c9d6c;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #5c9d6c;
+      color: var.$fontColorDark;
+      margin: 1rem;
+    }
+  }
+  .buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+  .reset {
+    width: fit-content;
+    @include mixins.buttonSmall;
+    margin-bottom: 0;
+  }
+  .submit {
+    align-self: flex-end;
+    margin-left: 1rem;
+  }
+}

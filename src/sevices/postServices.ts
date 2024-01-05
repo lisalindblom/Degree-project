@@ -1,12 +1,56 @@
-// Initialize the JS client
-import { createClient } from "@supabase/supabase-js";
+import { IPost } from "../models/IPost";
+import supabase from "./SupabaseServices";
 
-const supabaseUrl = "https://lwfjbntqvslcwutotlde.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY || "";
-const supabase = createClient(supabaseUrl, supabaseKey);
+export const getPosts = async (page: number) => {
+  const limit = 10;
+  const { data, error } = await supabase
+    .from("content")
+    .select("*")
+    .range((page - 1) * limit, page * limit - 1);
 
-// Make a request
-export const getAllPosts = async () => {
-  const { data: test } = await supabase.from("testTables").select("*");
-  return test;
+  if (error) {
+    console.log("error fetching all posts", error);
+    throw new Error(error.message);
+  }
+  //remove
+  console.log("getPosts", data);
+
+  return data;
+};
+
+export const getPostById = async (id: string) => {
+  const { data, error } = await supabase
+    .from("content")
+    .select("*")
+    .eq("id", id);
+  if (error) {
+    console.log("error fetching post by id", error);
+
+    throw new Error(error.message);
+  }
+  return data;
+};
+// Admin
+
+export const createPost = async (post: IPost) => {
+  const { data: createdPost, error } = await supabase
+    .from("posts")
+    .insert(post);
+  if (error) {
+    throw new Error(error.message);
+  }
+  return createdPost;
+};
+
+export const updatePost = async (post: IPost) => {
+  const { data } = await supabase
+    .from("posts")
+    .update(post)
+    .match({ id: post.id });
+  return data;
+};
+
+export const deletePost = async (id: string) => {
+  const { data } = await supabase.from("posts").delete().match({ id: id });
+  return data;
 };

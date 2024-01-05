@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import { createClient, Session } from "@supabase/supabase-js";
+import { Session } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { signOut } from "../../sevices/LoginServices";
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "";
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
-const supabase = createClient(supabaseUrl, supabaseKey);
+import supabase from "../../sevices/SupabaseServices";
 
 interface SignedInProps {
   onSignedIn: (signedIn: boolean) => void;
@@ -42,7 +39,7 @@ export const UserAuth: React.FC<SignedInProps> = (props) => {
     };
     return (
       <>
-        <div className="container-col maincontent outline">
+        <div className="flex-col main-content outline">
           <button type="button" onClick={handleLogOut}>
             Log out
           </button>

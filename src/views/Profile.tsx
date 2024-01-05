@@ -1,7 +1,7 @@
-export const Header = () => {
+export const Profile = () => {
   return (
     <>
-      <div className="outline maincontent">Profile</div>
+      <div className="outline main-content">Profile</div>
     </>
   );
 };

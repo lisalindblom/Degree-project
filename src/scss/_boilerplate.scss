@@ -1,48 +1,39 @@
+@use "variables" as var;
+@use "mixins";
+
 .outline {
   border: 1px solid greenyellow;
 }
 
-.container-column {
+.flex-col {
   display: flex;
   flex-direction: column;
-  width: 100vh;
+  width: inherit;
 }
 
-.container-row {
+.flex-row {
   display: flex;
   flex-direction: row;
   width: inherit;
 }
-.header {
-  height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
+
 .footer {
   padding: 10px;
   div {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
   }
-}
+  @include mixins.desktop {
+    display: flex;
 
-.landing {
-  height: 90vh;
-}
-
-nav {
-  ul {
-    li {
-      list-style: none;
-      margin: 10px;
-      a {
-        text-decoration: none;
-      }
+    align-items: center;
+    * {
+      flex-direction: row;
     }
   }
 }
 
-.maincontent {
+.landing {
   height: 90vh;
 }
