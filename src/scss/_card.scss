@@ -33,7 +33,7 @@
   flex-direction: column;
   p {
     padding: 0.5rem;
-    @include mixins.paragraphMobile;
+    @include mixins.paragraphSMobile;
     color: var.$fontColorLight;
   }
 }
@@ -67,7 +67,7 @@
 
   .step {
     border-radius: 0 0 5px 5px;
-    @include mixins.paragraphMobile;
+    @include mixins.paragraphSMobile;
     display: flex;
     flex-direction: row;
     padding: 0.5rem;

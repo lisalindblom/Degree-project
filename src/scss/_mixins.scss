@@ -30,9 +30,29 @@
   font-weight: 700;
 }
 
-@mixin paragraphMobile {
+@mixin paragraphLMobile {
   font-family: var.$primaryfontFamliy;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
+}
+
+@mixin paragraphSMobile {
+  font-family: var.$primaryfontFamliy;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin buttonSmall {
+  font-family: var.$secondaryfontFamliy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  color: var.$fontColorDark;
+  background-color: var.$fontColorLight;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  cursor: pointer;
 }
