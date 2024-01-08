@@ -69,7 +69,7 @@ export const Filter = ({ setPosts }: FilterProps) => {
             <button className="toggle-filter" onClick={toggleFilter}>
               Filter
               <i
-                className={`bi bi-caret-down-fill ${
+                className={`bi bi-chevron-down ${
                   isOpen ? "filter-open" : "filter-closed"
                 }`}
               ></i>
