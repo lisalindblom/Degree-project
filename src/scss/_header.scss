@@ -32,9 +32,6 @@
       padding-left: 1rem;
       font-weight: bolder;
     }
-    .icon-container {
-      margin-right: 50px;
-    }
   }
   .bottom {
     background-color: var.$secondaryColor;
@@ -97,15 +94,6 @@
     .top {
       z-index: 2;
       justify-content: space-between;
-      .icon-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0;
-        span {
-          padding-right: 0.5rem;
-        }
-      }
       .menu {
         display: flex;
         flex-direction: row;
@@ -118,6 +106,9 @@
         font: inherit;
         font-size: large;
         font-weight: 600;
+        i {
+          margin-left: 0.5rem;
+        }
         * {
           padding-top: 5px;
         }

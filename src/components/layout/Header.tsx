@@ -24,28 +24,19 @@ export const Header = () => {
           <div className="logo">
             <Link to={"/"}>RE:LIFE</Link>
           </div>
-          <div className="icon-container">
-            <Link to={"/profile"}>
-              <span className="material-symbols-rounded">favorite</span>
-            </Link>
-            <Link to={"/profile"}>
-              <span className="material-symbols-outlined">person</span>
-            </Link>
-            {!isOpen ? (
-              <button
-                typeof="button"
-                className="menu"
-                onClick={() => {
-                  setShowNav(!showNav);
-                }}
-              >
-                Menu
-                <span className="material-symbols-rounded">
-                  keyboard_arrow_down
-                </span>
-              </button>
-            ) : null}
-          </div>
+
+          {!isOpen ? (
+            <button
+              typeof="button"
+              className="menu"
+              onClick={() => {
+                setShowNav(!showNav);
+              }}
+            >
+              Menu
+              <i className="bi bi-chevron-down"></i>
+            </button>
+          ) : null}
         </div>
         <div className="bottom"></div>
 
