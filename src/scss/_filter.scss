@@ -1,11 +1,11 @@
 @use "variables" as var;
 @use "mixins";
-* {
-  @include mixins.paragraphSMobile;
-}
 .filter-layout-container {
   display: flex;
   flex-direction: column;
+  * {
+    @include mixins.paragraphSMobile;
+  }
 }
 .graphics-container {
   display: flex;

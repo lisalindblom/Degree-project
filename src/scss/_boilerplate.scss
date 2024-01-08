@@ -17,23 +17,6 @@
   width: inherit;
 }
 
-.footer {
-  padding: 10px;
-  div {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-  @include mixins.desktop {
-    display: flex;
-
-    align-items: center;
-    * {
-      flex-direction: row;
-    }
-  }
-}
-
 .landing {
   height: 90vh;
 }
