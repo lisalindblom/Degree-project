@@ -1,4 +1,4 @@
-import sewingWomen from "../../assets/pana.png";
+import sewingWomen from "../../assets/panasewingWomen.png";
 import guy from "../../assets/character-2.png";
 import laptop from "../../assets/character-2guyWithLaptop.png";
 
