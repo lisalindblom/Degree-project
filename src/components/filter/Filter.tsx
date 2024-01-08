@@ -63,18 +63,16 @@ export const Filter = ({ setPosts }: FilterProps) => {
                 onChange={(e) => setSearchValue(e.target.value)}
               />
               <button className="search-button" onClick={handleSearch}>
-                <span className="material-symbols-rounded">search</span>
+                <i className="bi bi-search"></i>
               </button>
             </div>
             <button className="toggle-filter" onClick={toggleFilter}>
               Filter
-              <span
-                className={`material-symbols-rounded ${
+              <i
+                className={`bi bi-caret-down-fill ${
                   isOpen ? "filter-open" : "filter-closed"
                 }`}
-              >
-                arrow_drop_down
-              </span>
+              ></i>
             </button>
           </div>
 

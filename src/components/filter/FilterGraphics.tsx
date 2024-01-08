@@ -1,14 +1,12 @@
-import sewingWomen from "../../assets/panasewingWomen.png";
-import guy from "../../assets/character-2.png";
-import laptop from "../../assets/character-2guyWithLaptop.png";
+import sewingGroup from "../../assets/sewinggroup.png";
+import laptop from "../../assets/laptopguy.png";
 
 export const FilterGraphics = () => {
   return (
     <>
       <div className="graphics-container">
         <img src={laptop} alt="" />
-        <img src={sewingWomen} alt="" />
-        <img src={guy} alt="" />
+        <img src={sewingGroup} alt="" />
       </div>
     </>
   );
