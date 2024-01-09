@@ -56,7 +56,7 @@ export const Post = () => {
             onError={(e) => (e.currentTarget.src = noImage)}
           />
           <a className="back-link" onClick={() => window.history.back()}>
-            <i className="material-symbols-rounded">keyboard_backspace</i>
+            <i className="bi bi-arrow-left"></i>
             Back to overview
           </a>
           <div className="info-container">
@@ -72,7 +72,7 @@ export const Post = () => {
           className="top_of_page"
           onClick={() => document.body.scrollIntoView({ behavior: "smooth" })}
         >
-          <span className="material-symbols-rounded">arrow_upward_alt</span>
+          <i className="bi bi-arrow-up-short"></i>
         </button>
       </div>
     </>
