@@ -18,7 +18,11 @@ export const Card: React.FC<CardProps> = ({ post, togglePost }) => {
           }}
         >
           {steps.heading}
-          <span className="material-symbols-rounded">keyboard_arrow_down</span>
+          <i
+            className={`bi bi-chevron-down ${
+              steps.is_showing ? "filter-open" : "filter-closed"
+            }`}
+          ></i>
         </button>
         {steps.is_showing ? (
           <div className="step">

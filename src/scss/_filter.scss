@@ -1,5 +1,6 @@
 @use "variables" as var;
 @use "mixins";
+
 .filter-layout-container {
   display: flex;
   flex-direction: column;
@@ -8,16 +9,25 @@
   }
 }
 .graphics-container {
+  padding: 0 1rem 0 1rem;
   display: flex;
   flex-direction: row;
-  max-width: 90%;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
   align-items: baseline;
   margin-top: 1rem;
-  margin-bottom: -1rem;
+  margin-bottom: -7%;
   z-index: 1;
+  box-sizing: border-box;
+  border-bottom: 10px solid var.$filter;
   img {
-    height: 100px;
+    &:first-child {
+      display: none;
+    }
+    &:last-child {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 .filter-container {
@@ -64,15 +74,19 @@
   width: fit-content;
 }
 .toggle-filter {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
   @include mixins.buttonSmall;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  font-weight: normal;
   text-align: left;
   background: none;
   border: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 1rem;
-  align-self: flex-start;
+  i {
+    padding: 0 0.5rem 0 0.5rem;
+  }
 }
 .filter-open {
   transform: rotate(180deg);
@@ -120,8 +134,34 @@
   height: fit-content;
 }
 
-// DESKTOP
+// ****** TABLET & DESKTOP ************
 @include mixins.tablet {
+  .graphics-container {
+    padding: 0 2rem 0 2rem;
+    margin-bottom: -4%;
+    img {
+      &:first-child {
+        height: 220px;
+        display: block;
+      }
+      &:last-child {
+        height: 350px;
+        width: auto;
+      }
+    }
+  }
+  .filter-container {
+    padding-top: 3rem;
+  }
+  #search {
+    padding: 1.3rem;
+  }
+  .search-button {
+    height: 41px;
+    i {
+      font-size: 1.1rem;
+    }
+  }
   .search-button-container {
     width: 80%;
   }
@@ -129,7 +169,7 @@
     flex-direction: column;
   }
   .toggle-filter {
-    align-self: flex-start;
+    align-self: normal;
   }
   .select-container {
     flex-direction: row;
