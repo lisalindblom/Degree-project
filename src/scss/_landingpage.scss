@@ -1,4 +1,5 @@
 @use "variables" as var;
+@use "mixins";
 .startpage {
   display: flex;
   flex-direction: column;
@@ -10,19 +11,23 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 300px;
-  margin-bottom: 2rem;
+  height: 40vh;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1rem 3rem 1rem;
 }
 .content-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0.75rem 1.5rem 0.75rem 1.5rem;
   padding: 2rem 1rem 1.2rem 1rem;
   border-radius: 10px;
   h2 {
@@ -38,16 +43,42 @@
       margin-left: 0.5rem;
     }
   }
-  &:nth-child(2) {
+  &:nth-child(1) {
     background-color: var.$cardLilac;
   }
 
-  &:nth-child(3) {
+  &:nth-child(2) {
     background-color: var.$cardBlue;
+    margin: 1rem 0 1rem 0;
   }
 
-  &:nth-child(4) {
+  &:nth-child(3) {
     background-color: var.$cardGreen;
-    margin-bottom: 3rem;
+  }
+}
+@include mixins.tablet {
+  .hero {
+    height: 70vh;
+  }
+  .content-container {
+    margin: 0.6rem;
+  }
+}
+
+@include mixins.desktop {
+  .hero {
+    margin-bottom: 0;
+  }
+  .content-container {
+    flex-direction: row;
+    align-items: stretch;
+    margin: 2rem 1rem 2rem 1rem;
+  }
+  .content-card {
+    flex: 1;
+    margin: 1rem;
+    &:nth-child(2) {
+      margin: 1rem;
+    }
   }
 }

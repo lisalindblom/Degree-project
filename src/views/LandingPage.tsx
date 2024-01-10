@@ -32,38 +32,40 @@ export const LandingPage = () => {
         <div className="hero">
           <h1>Embracing sustainability, one stitch at a time</h1>
         </div>
-        <div className="content-card">
-          <img src={needle} alt="" />
-          <h2>Explore creative guides</h2>
-          <p>
-            Dive into a world of DIY fashion! Browse guides on repairing,
-            remaking, and reusing clothing.
-          </p>
-          <Link to="/posts">
-            Read more<i className="bi bi-arrow-right"></i>
-          </Link>
-        </div>
-        <div className="content-card">
-          <img src={leaf} alt="" />
-          <h2>Fabric insights</h2>
-          <p>
-            Uncover the different fabrics, their characteristics, and how to
-            care for them.
-          </p>
-          <Link to="/material-guide">
-            Read more<i className="bi bi-arrow-right"></i>
-          </Link>
-        </div>
-        <div className="content-card">
-          <img src={earth} alt="" />
-          <h2>Environmental Impact</h2>
-          <p>
-            Explore our resources that shed light on the environmental
-            consequences of our clothing consumption.
-          </p>
-          <Link to="/climate-impact">
-            Read more<i className="bi bi-arrow-right"></i>
-          </Link>
+        <div className="content-container">
+          <div className="content-card">
+            <img src={needle} alt="" />
+            <h2>Explore creative guides</h2>
+            <p>
+              Dive into a world of DIY fashion! Browse guides on repairing,
+              remaking, and reusing clothing.
+            </p>
+            <Link to="/posts">
+              Read more<i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
+          <div className="content-card">
+            <img src={leaf} alt="" />
+            <h2>Fabric insights</h2>
+            <p>
+              Uncover the different fabrics, their characteristics, and how to
+              care for them.
+            </p>
+            <Link to="/material-guide">
+              Read more<i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
+          <div className="content-card">
+            <img src={earth} alt="" />
+            <h2>Environmental Impact</h2>
+            <p>
+              Explore our resources that shed light on the environmental
+              consequences of our clothing consumption.
+            </p>
+            <Link to="/climate-impact">
+              Read more<i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
         </div>
         {isVisible && (
           <button className="top-of-page" onClick={scrollToTop}>
