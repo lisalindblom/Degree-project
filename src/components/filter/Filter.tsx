@@ -54,7 +54,13 @@ export const Filter = ({ setPosts }: FilterProps) => {
         <FilterGraphics />
         <div className="filter-container">
           <div className="search-container">
-            <div className="search-button-container">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+              }}
+              className="search-button-container"
+            >
               <input
                 type="text"
                 id="search"
@@ -62,10 +68,10 @@ export const Filter = ({ setPosts }: FilterProps) => {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
               />
-              <button className="search-button" onClick={handleSearch}>
+              <button className="search-button" type="submit">
                 <i className="bi bi-search"></i>
               </button>
-            </div>
+            </form>
             <button className="toggle-filter" onClick={toggleFilter}>
               Filter
               <i
