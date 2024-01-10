@@ -44,6 +44,8 @@
   font-weight: 500;
 }
 
+//******** BUTTONS ********//
+
 @mixin buttonSmall {
   font-family: var.$secondaryfontFamliy;
   font-size: 1rem;
@@ -55,4 +57,18 @@
   border-radius: 20px;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   cursor: pointer;
+}
+
+.top-of-page {
+  z-index: 2;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  i {
+    font-size: 1.5rem;
+  }
 }

@@ -1,0 +1,53 @@
+@use "variables" as var;
+.startpage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero {
+  background-image: url("../assets/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.content-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 1.5rem 0.75rem 1.5rem;
+  padding: 2rem 1rem 1.2rem 1rem;
+  border-radius: 10px;
+  h2 {
+    margin: 1rem 0 0 0;
+  }
+  p {
+    margin: 0 0 1rem 0;
+  }
+  a {
+    color: var.$fontColorDark;
+    font-weight: 600;
+    i {
+      margin-left: 0.5rem;
+    }
+  }
+  &:nth-child(2) {
+    background-color: var.$cardLilac;
+  }
+
+  &:nth-child(3) {
+    background-color: var.$cardBlue;
+  }
+
+  &:nth-child(4) {
+    background-color: var.$cardGreen;
+    margin-bottom: 3rem;
+  }
+}
