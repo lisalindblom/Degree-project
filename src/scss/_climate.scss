@@ -1,0 +1,66 @@
+@use "variables" as var;
+@use "mixins";
+.climate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  p {
+    text-align: left;
+  }
+  h3 {
+    text-align: left;
+    margin: 0.3rem;
+    width: 100%;
+    @include mixins.headingSMobile;
+  }
+  h2 {
+    text-align: left;
+    width: 100%;
+    @include mixins.headingLMobile;
+  }
+}
+.hero-container {
+  margin: 1rem;
+  @include mixins.paragraphLMobile;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .text-container {
+    margin-bottom: 2rem;
+    h1 {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
+
+@include mixins.desktop {
+  .climate-container {
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card {
+      align-items: flex-start;
+    }
+  }
+  .hero-container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    img {
+      height: 60vh;
+      margin-left: 3rem;
+    }
+    .text-container {
+      margin-left: 2rem;
+      margin-bottom: 0;
+      width: 40%;
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
