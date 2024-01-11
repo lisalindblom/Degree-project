@@ -54,7 +54,7 @@
   text-align: left;
   background-color: var.$fontColorLight;
   align-self: flex-end;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 0 5px 5px;
 }
 
 @include mixins.tablet {
@@ -83,6 +83,7 @@
   .fabric-guide-text {
     padding: 2rem 4rem 2rem 4rem;
     width: 55%;
+    border-radius: 00 5px 5px 0;
 
     @include mixins.pagePresentationDesktop;
   }
