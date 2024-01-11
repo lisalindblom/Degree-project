@@ -19,7 +19,7 @@ export const Posts = () => {
       <div className="headings">
         <h2>Guides</h2>
         <p>
-          Here you can find all sorts od trips and tricks on how to give clothes
+          Here you can find all sorts of tips and tricks on how to give clothes
           a longer or new life
         </p>
       </div>
