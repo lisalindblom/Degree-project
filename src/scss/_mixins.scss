@@ -44,6 +44,40 @@
   font-weight: 500;
 }
 
+@mixin pagePresentationMobile {
+  font-family: var.$primaryfontFamliy;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+@mixin pagePresentationTablet {
+  font-family: var.$primaryfontFamliy;
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+@mixin pagePresentationDesktop {
+  font-family: var.$primaryfontFamliy;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
 //******** BUTTONS ********//
 
 @mixin buttonSmall {
@@ -57,18 +91,4 @@
   border-radius: 20px;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   cursor: pointer;
-}
-
-.top-of-page {
-  z-index: 2;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border: none;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  i {
-    font-size: 1.5rem;
-  }
 }
