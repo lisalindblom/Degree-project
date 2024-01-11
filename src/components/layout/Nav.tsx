@@ -17,12 +17,6 @@ export const Nav = () => {
             <li>
               <Link to={"/climate-impact"}> Climate Impact</Link>
             </li>
-            <li>
-              <Link to={"/about-us"}> About us</Link>
-            </li>
-            <li>
-              <Link to={"/login"}> Login</Link>
-            </li>
           </ul>
         </nav>
       </div>
