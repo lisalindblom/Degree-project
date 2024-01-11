@@ -1,0 +1,100 @@
+@use "variables" as var;
+@use "mixins";
+.fabric-guide-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.presentation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  @include mixins.pagePresentationMobile;
+}
+.fabric-guides-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #cddace;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.fabric-guide {
+  display: flex;
+  flex-direction: column;
+  background-color: var.$fontColorLight;
+  margin: 1rem 0 1rem 0;
+  border-radius: 5px;
+  height: fit-content;
+  @include mixins.paragraphLMobile;
+}
+
+[class^="image-container"] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 40%;
+  padding-bottom: 60%;
+  position: relative;
+  border-radius: 5px 5px 0 0;
+  &[class$="knit"] {
+    background-image: url("../assets/knitted 1.jpg");
+  }
+  &[class$="woven"] {
+    background-image: url("../assets/woven.jpg");
+  }
+  &[class$="jersey"] {
+    background-image: url("../assets/jersey.jpg");
+  }
+  &[class$="denim"] {
+    background-image: url("../assets/jeans.jpg");
+  }
+  &[class$="pvc"] {
+    background-image: url("../assets/knitted 1.jpg");
+  }
+}
+.fabric-guide-text {
+  padding: 1rem;
+  text-align: left;
+}
+
+@include mixins.tablet {
+  .presentation-container {
+    @include mixins.pagePresentationTablet;
+  }
+  [class^="image-container"] {
+    width: 100%;
+    padding-bottom: 50%;
+    position: relative;
+  }
+}
+
+@include mixins.desktop {
+  .presentation-container {
+    @include mixins.pagePresentationDesktop;
+    width: 50%;
+  }
+  .fabric-guides-container {
+    padding: 2rem;
+    align-items: center;
+  }
+  .fabric-guide {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 80%;
+  }
+  [class^="image-container"] {
+    width: 100%;
+    padding-bottom: 50%;
+    position: relative;
+    border-radius: 5px 0 0 5px;
+  }
+  .fabric-guide-text {
+    padding: 2rem 4rem 2rem 4rem;
+    width: 100%;
+    @include mixins.pagePresentationDesktop;
+  }
+}
