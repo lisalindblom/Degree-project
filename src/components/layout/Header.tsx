@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import HamburgerMenu from "react-hamburger-menu";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,9 @@ export const Header = () => {
       <div className="flex-col header">
         <div className="top">
           <div className="logo">
-            <Link to={"/"}>RE:LIFE</Link>
+            <Link to={"/"}>
+              <img src={logo} alt="" />
+            </Link>
           </div>
 
           {!isOpen ? (
