@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IPost } from "../models/IPost";
-import { getPostById } from "../services/postServices";
+import { getImages, getPostById } from "../services/postServices";
 import { useParams } from "react-router";
 import noImage from "../assets/knit.jpg";
 import { Card } from "../components/guides/Card";
@@ -8,19 +8,21 @@ import { Card } from "../components/guides/Card";
 export const Post = () => {
   const params = useParams();
   const [post, setPost] = useState<IPost>();
-
   useEffect(() => {
     const fetchPosts = async () => {
       if (params.id) {
         const content = await getPostById(params.id);
 
         if (content && content.length > 0) {
-          setPost(content[0]);
+          const post = content[0];
+          const response = await getImages(post.thumbnail, post.id);
+          setPost({ ...post, thumbnail: response.data.publicUrl });
         } else {
           throw new Error("No content found");
         }
       }
     };
+
     fetchPosts();
   }, [params.id]);
 
