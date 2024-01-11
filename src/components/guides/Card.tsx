@@ -1,5 +1,7 @@
-import { IPost } from "../../models/IPost";
+import { IPost, ISteps } from "../../models/IPost";
 import noImage from "../../assets/knit.jpg";
+import { useEffect, useState } from "react";
+import { getImages } from "../../services/postServices";
 
 interface CardProps {
   post?: IPost;
@@ -7,7 +9,25 @@ interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({ post, togglePost }) => {
-  const steps = post?.steps.map((steps, index) => (
+  const [updatedPost, setPost] = useState<IPost>();
+  useEffect(() => {
+    if (post) {
+      const fetchPostAndImages = async () => {
+        const updatedSteps = await Promise.all(
+          post.steps.map(async (steps: ISteps) => {
+            const response = await getImages(steps.image, post.id);
+            return { ...steps, image: response.data.publicUrl };
+          })
+        );
+
+        setPost({ ...post, steps: updatedSteps });
+      };
+
+      fetchPostAndImages();
+    }
+  }, [post]);
+
+  const steps = updatedPost?.steps.map((steps, index) => (
     <>
       <div className="steps-card">
         <button
@@ -24,7 +44,7 @@ export const Card: React.FC<CardProps> = ({ post, togglePost }) => {
           <div className="step">
             <img
               className="step-image"
-              src={post?.thumbnail ? post.thumbnail : noImage}
+              src={steps.image ? steps.image : noImage}
               onError={(e) => (e.currentTarget.src = noImage)}
             />
             <p>{steps.text}</p>

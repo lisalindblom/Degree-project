@@ -12,10 +12,14 @@ export const getPosts = async (page: number) => {
     console.log("error fetching all posts", error);
     throw new Error(error.message);
   }
-  //remove
-  console.log("getPosts", data);
-
   return data;
+};
+
+export const getImages = async (imageName: string, folderName: string) => {
+  const publicUrl = await supabase.storage
+    .from(`images/${folderName}`)
+    .getPublicUrl(imageName);
+  return publicUrl;
 };
 
 export const getPostById = async (id: string) => {
@@ -30,8 +34,8 @@ export const getPostById = async (id: string) => {
   }
   return data;
 };
-// Admin
 
+// Admin
 export const createPost = async (post: IPost) => {
   const { data: createdPost, error } = await supabase
     .from("posts")
