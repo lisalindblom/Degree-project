@@ -21,25 +21,18 @@
   padding: 1rem;
   margin-bottom: 2rem;
 }
-.fabric-guide {
+[class^="fabric-type"] {
   display: flex;
   flex-direction: column;
   background-color: var.$fontColorLight;
   margin: 1rem 0 1rem 0;
   border-radius: 5px;
   height: fit-content;
+  padding-top: 80%;
   @include mixins.paragraphLMobile;
-}
-
-[class^="image-container"] {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  height: 40%;
-  padding-bottom: 60%;
-  position: relative;
-  border-radius: 5px 5px 0 0;
   &[class$="knit"] {
     background-image: url("../assets/knitted 1.jpg");
   }
@@ -59,16 +52,17 @@
 .fabric-guide-text {
   padding: 1rem;
   text-align: left;
+  background-color: var.$fontColorLight;
+  align-self: flex-end;
+  border-radius: 0 5px 5px 0;
 }
 
 @include mixins.tablet {
   .presentation-container {
     @include mixins.pagePresentationTablet;
   }
-  [class^="image-container"] {
-    width: 100%;
-    padding-bottom: 50%;
-    position: relative;
+  [class^="fabric-type"] {
+    padding-top: 50%;
   }
 }
 
@@ -81,20 +75,15 @@
     padding: 2rem;
     align-items: center;
   }
-  .fabric-guide {
-    flex-direction: row;
-    align-items: flex-start;
-    width: 80%;
-  }
-  [class^="image-container"] {
+
+  [class^="fabric-type"] {
     width: 100%;
-    padding-bottom: 50%;
-    position: relative;
-    border-radius: 5px 0 0 5px;
+    padding-top: 0;
   }
   .fabric-guide-text {
     padding: 2rem 4rem 2rem 4rem;
-    width: 100%;
+    width: 55%;
+
     @include mixins.pagePresentationDesktop;
   }
 }

@@ -34,8 +34,7 @@ export const MaterialGuide = () => {
           </p>
         </div>
         <div className="fabric-guides-container">
-          <div className="fabric-guide">
-            <div className="image-container-knit"></div>
+          <div className="fabric-type-knit">
             <div className="fabric-guide-text">
               <h2>Knitted fabric</h2>
               <p>
@@ -55,8 +54,7 @@ export const MaterialGuide = () => {
             </div>
           </div>
 
-          <div className="fabric-guide">
-            <div className="image-container-woven"></div>
+          <div className="fabric-type-woven">
             <div className="fabric-guide-text">
               <h2>Woven fabrics</h2>
               <p>
@@ -76,8 +74,7 @@ export const MaterialGuide = () => {
             </div>
           </div>
 
-          <div className="fabric-guide">
-            <div className="image-container-jersey"></div>
+          <div className="fabric-type-jersey">
             <div className="fabric-guide-text">
               <h2>Jersey fabric</h2>
               <p>
@@ -97,8 +94,7 @@ export const MaterialGuide = () => {
             </div>
           </div>
 
-          <div className="fabric-guide">
-            <div className="image-container-denim"></div>
+          <div className="fabric-type-denim">
             <div className="fabric-guide-text">
               <h2>Denim</h2>
               <p>
@@ -123,8 +119,7 @@ export const MaterialGuide = () => {
             </div>
           </div>
 
-          <div className="fabric-guide">
-            <div className="image-container-pvc"></div>
+          <div className="fabric-type-pvc">
             <div className="fabric-guide-text">
               <h2>PVC-coated</h2>
               <p>
