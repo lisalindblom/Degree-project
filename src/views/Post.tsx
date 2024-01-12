@@ -8,6 +8,23 @@ import { Card } from "../components/guides/Card";
 export const Post = () => {
   const params = useParams();
   const [post, setPost] = useState<IPost>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 200) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       if (params.id) {
@@ -22,8 +39,9 @@ export const Post = () => {
         }
       }
     };
-
+    window.addEventListener("scroll", toggleVisibility);
     fetchPosts();
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, [params.id]);
 
   const showPresentation = (
@@ -70,12 +88,11 @@ export const Post = () => {
           </div>
         </div>
         <Card post={post} togglePost={togglePost}></Card>
-        <button
-          className="top_of_page"
-          onClick={() => document.body.scrollIntoView({ behavior: "smooth" })}
-        >
-          <i className="bi bi-arrow-up-short"></i>
-        </button>
+        {isVisible && (
+          <button className="top-of-page" onClick={scrollToTop}>
+            <i className="bi bi-arrow-up"></i>
+          </button>
+        )}
       </div>
     </>
   );
