@@ -5,7 +5,6 @@ import { Posts } from "./views/Posts";
 import { Post } from "./views/Post";
 import { MaterialGuide } from "./views/MaterialGuide";
 import { ClimateImpact } from "./views/ClimateImpact";
-import { Login } from "./views/Login";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -37,11 +36,6 @@ export const router = createBrowserRouter([
       {
         path: "/climate-impact",
         element: <ClimateImpact></ClimateImpact>,
-        index: true,
-      },
-      {
-        path: "/login",
-        element: <Login></Login>,
         index: true,
       },
     ],
