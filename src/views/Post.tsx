@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IPost } from "../models/IPost";
 import { getImages, getPostById } from "../services/postServices";
 import { useParams } from "react-router";
-import noImage from "../assets/knit.jpg";
+import noImage from "../assets/noImage.png";
 import { Card } from "../components/guides/Card";
 
 export const Post = () => {

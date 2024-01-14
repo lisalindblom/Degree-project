@@ -1,5 +1,5 @@
 import { IPost } from "../../models/IPost";
-import noImage from "../../assets/knit.jpg";
+import noImage from "../../assets/noImage.png";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getImages } from "../../services/postServices";

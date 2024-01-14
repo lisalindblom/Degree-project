@@ -3,6 +3,7 @@ import { Filter } from "../components/filter/Filter";
 import { ShowAllContent } from "../components/guides/ShowAllContent";
 import { IPost } from "../models/IPost";
 import { getPosts } from "../services/postServices";
+import notFound from "../assets/fotFound.png";
 export const Posts = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
 
@@ -27,16 +28,19 @@ export const Posts = () => {
       {posts && posts.length > 0 ? (
         <ShowAllContent posts={posts}></ShowAllContent>
       ) : (
-        <div>
-          <h3>Sorry!</h3>
-          <p>
-            We found no post matching your search. Try removing some of the
-            filter and try again.
-          </p>
-          <p>
-            You can also contact us at email@email.com and tell us about what
-            you would like us to post
-          </p>
+        <div className="not-found">
+          <img src={notFound} alt="" />
+          <div>
+            <h3>Sorry!</h3>
+            <p>
+              We found no post matching your search. Try removing some of the
+              filter and try again.
+            </p>
+            <p>
+              You can also contact us at email@email.com and tell us about what
+              you would like us to post
+            </p>
+          </div>
         </div>
       )}
     </>

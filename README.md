@@ -1,14 +1,43 @@
-# My degree project
+# A Mending Hand
 
-## Project setup
+This is my degreeproject as a frontend developer studying at Medieinstitutet.
 
-```js
+In this project I have created a platform where you can learn about how to give their clothing a longer life.
+
+The user can follow guides on how to mend, remake or reuse clothing. It also contains information about fabrics, sewing and the environmental impact of our current consumption of clothing.
+
+To see it live, visit: [A Mending Hand](https://a-mending-hand.netlify.app/)
+
+## Tech
+
+`React`
+`Typescript`
+`Vite`
+`Supabase`
+
+## Getting started
+
+Clone the repo:
+
+```bash
+git clone https://github.com/lisalindblom/Degree-project.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd degree-project
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-```js
-npm build
-```
+### Running the Project
+
+Start the project using: `npm run dev`
 
 ## Commit message
 
@@ -21,41 +50,27 @@ npm build
 - `ops` Commits, that affect operational components like infrastructure, deployment, backup, recovery
 - `chore` Miscellaneous commits e.g. modifying `.gitignore`
 
-## Branch naming
+## Naming conventions
 
-feat/desktop-header
+### Branches
 
-`feat` - implement new component
-`fix` - bugfixes
-`chore` - docs
+Example:
+`feat/desktop-header`
 
-## React + TypeScript + Vite
+- `feat` - implement new component
+- `fix` - bugfixes
+- `chore` - docs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Js and Tsx files
 
-Currently, two official plugins are available:
+PascalCamelCasing
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Example:`FilterServices.js`
 
-## Expanding the ESLint configuration
+### Styling
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**files:**
+lowerCamelCasing
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**classNames:**
+kebab-casing

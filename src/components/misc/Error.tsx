@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import error from "../../assets/error.png";
 
 export const Error = () => {
   return (
     <>
-      {" "}
-      <p>Oj! Här blev det fel</p>
-      <Link to={"/"}>Gå till startsidan</Link>
+      <div className="error">
+        <img src={error} alt="" />
+        <p>Oops! Something went wrong</p>
+        <Link to={"/"}>Go back to start</Link>
+      </div>
     </>
   );
 };
