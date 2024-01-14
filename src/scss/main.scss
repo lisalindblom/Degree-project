@@ -8,6 +8,7 @@
 @use "card";
 @use "materialGuide";
 @use "climate";
+@use "error";
 @use "variables" as var;
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
